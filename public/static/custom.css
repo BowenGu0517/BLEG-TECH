@@ -1,0 +1,75 @@
+
+/***************  General *************/
+#content{
+  min-height: 80vh;
+}
+
+.hidden{
+  display:none;
+}
+
+/***********  Header ************/
+header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  border-bottom:1px solid #ffffff80;
+  background-color: #fd7b5eab;
+  background-image: radial-gradient(circle farthest-side at center bottom, #fd6f69, #ffa56e3d 125%);
+}
+
+
+header #Submenu{
+  border-top:1px solid #ffffff80;
+  height:0;
+  opacity:0;
+  overflow: hidden;
+  transition: all 0.8s ease-in-out;
+}
+header #Submenu.active{
+  height:150px;
+  opacity:1;
+}
+
+
+
+
+
+
+
+/************  Footer ************/
+footer {
+  background: #30353a;
+  color:#eeeeee;
+}
+footer .container{
+      padding: 100px;
+}
+
+
+/************* Home Page ************/
+#Banner {
+  height: 100vh;
+  overflow: hidden;
+}
+#WhoIsBLEG {
+  background: #feeddf;
+}
+#WhoIsBLEG .container{
+  width: 50%;
+  padding: 100px 0;
+}
+#OurService{
+  position: relative;
+  background: #6c72b6;
+  padding: 50px 0 200px 0 ;
+}
+#OurService #house{
+  position: absolute;
+  right: 0;
+  bottom: -91px;
+}
+
+#ContactUS{
+  padding:100px 0;
+}
