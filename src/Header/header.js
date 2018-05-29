@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props) {
@@ -16,53 +16,69 @@ class Header extends Component {
       <header>
         <div className="container">
           <div className="row">
-            <div className="col-md-2"  >
+            <div id="Logo" >
               <img src="/static/image/Logo.png1" width="200" height="auto" />
             </div>
-            <nav className="col-md" >
-              <ul className="nav">
-                <li className="nav-link" onClick={ this.ActiveMenu.bind(this, '1111') }>
-                  <Link to='/'>Home</Link></li>
-                <li className="nav-link" onClick={ this.ActiveMenu.bind(this, 'second') } >
-                  <Link to='/roster'>Roster</Link> </li>
-                <li className="nav-link" onClick={ this.ActiveMenu.bind(this, '3333') } >
-                  <Link to='/schedule'>Schedule</Link></li>
-                <li className="nav-link Login" onClick={ this.ActiveMenu.bind(this, '555') } >
-                  <Link to='/schedule'>login</Link></li>
+            <nav className="col-md"  >
+              <ul className="nav justify-content-center ">
+                <NavLink exact to='/' activeClassName="active"
+                  onClick={ this.ActiveMenu.bind(this, '1111') }> Home</NavLink>
+                <NavLink exact to='/Roster' activeClassName="active"
+                  onClick={ this.ActiveMenu.bind(this, '432423') }> Roster</NavLink>
+                <NavLink exact to='/schedule' activeClassName="active"
+                  onClick={this.ActiveMenu.bind(this, '34324')} > Schedule</NavLink>
+                <NavLink exact to='/login' activeClassName="active"
+                  onClick={ this.ActiveMenu.bind(this, '234234') }> login</NavLink>
               </ul>
             </nav>
+            <div id="right">
+              <button> Login </button>
+            </div>
           </div>
         </div>
-        <Submenu activedMenu={this.state.activedMenu} />
+        <Submenu activedMenu={this.state.activedMenu}  />
       </header>
     )
   }
   ActiveMenu ( Item ){
-    if( this.state.activedMenu === Item ){
-      this.setState(  { activedMenu:false } )
-    }else{
-      this.setState(  { activedMenu:Item } )
-    }
+     this.state.activedMenu === Item
+      ?this.setState({activedMenu:false}) : this.setState({activedMenu:Item})
   }
 }
 
-const Submenu = ({activedMenu}) =>{
+const Submenu = ({activedMenu} ) =>{
   return(
-    <div id="Submenu" className={ activedMenu ? 'active'  : ''   } >
+    <div id="Submenu" className={ activedMenu ? 'active'  : '' } >
+
       <div className="container">
         <div className="row">
           <div className="col-sm-4" >
             <ul>
-              <li><Link to='/'>  {activedMenu} </Link></li>
+              <li><NavLink to='/' activeClassName="active" >  {activedMenu} </NavLink></li>
               <p> sdadsadasd</p>
-              <li><Link to='/'> {activedMenu} </Link></li>
+              <li><NavLink to='/'> {activedMenu} </NavLink></li>
               <p> sdadsadasd</p>
             </ul>
           </div>
-              <li><Link to='/'>{activedMenu} </Link></li>
+          <div className="col-sm-4" >
+            <ul>
+              <li><NavLink to='/'>  {activedMenu} </NavLink></li>
               <p> sdadsadasd</p>
-              <li><Link to='/'> {activedMenu} </Link></li>
+              <li><NavLink to='/'> {activedMenu} </NavLink></li>
               <p> sdadsadasd</p>
+            </ul>
+          </div>
+          <div className="col-sm-3" >
+            <ul>
+              <li><NavLink to='/'>  {activedMenu} </NavLink></li>
+              <p> sdadsadasd</p>
+              <li><NavLink to='/'> {activedMenu} </NavLink></li>
+              <p> sdadsadasd</p>
+            </ul>
+          </div>
+          <div className="col-sm-1" >
+            <i className="material-icons"  onClick={ activedMenu = false }> clear </i>
+          </div>
         </div>
       </div>
     </div>

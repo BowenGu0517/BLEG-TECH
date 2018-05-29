@@ -1,5 +1,11 @@
 
 /***************  General *************/
+body{
+  background:#ececec;
+  color: black;
+}
+
+
 #content{
   min-height: 80vh;
 }
@@ -17,21 +23,34 @@ header{
   background-color: #fd7b5eab;
   background-image: radial-gradient(circle farthest-side at center bottom, #fd6f69, #ffa56e3d 125%);
 }
+header nav a{
+  color: #ececec;
+  padding: 10px 30px;
+}
+header nav a:after{
+  content: 'keyboard_arrow_down';
+  font-family: 'Material Icons';
+  font-size: 20px;
+  vertical-align: sub;
+}
+header nav a.active,
+header nav a:hover{
+  color: #ececec;
+  text-decoration: none;
+  border-bottom:2px solid;
+}
+
 
 
 header #Submenu{
-  border-top:1px solid #ffffff80;
+  border-top:1px solid #ececec;
   height:0;
-  opacity:0;
   overflow: hidden;
   transition: all 0.8s ease-in-out;
 }
 header #Submenu.active{
   height:150px;
-  opacity:1;
 }
-
-
 
 
 
